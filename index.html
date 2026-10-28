@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>H100 — соберём вместе</title>
+  <meta name="description" content="Помоги собрать на NVIDIA H100. Два клика — и ты в ленте благодарностей.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23F2C744'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='bold' text-anchor='middle' fill='%23222019'%3E1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <a class="skip" href="#main" data-i18n="skip">К содержимому</a>
+
+  <!-- N2 · Floating chip: wordmark + язык -->
+  <header class="chip">
+    <a class="chip__wordmark" href="#top">h<span class="chip__one">1</span>00</a>
+    <div class="lang" role="group" aria-label="Язык / Language">
+      <button type="button" id="lang-ru" aria-pressed="true">RU</button>
+      <button type="button" id="lang-en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <!-- Stat-Led hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">
+          <span class="figure reveal" style="--i:0"><span class="figure__cur">$</span><span id="amount-usd">0</span></span>
+          <span class="h1-words reveal" style="--i:1" data-i18n="hero_words">собираем на NVIDIA H100</span>
+        </h1>
+        <p class="qualifier tnum reveal" style="--i:2" id="hero-qualifier">из $30 000 · ≈ 0 ₸</p>
+        <div class="progress reveal" style="--i:2" id="progress" role="progressbar" aria-label="Прогресс сбора" aria-valuemin="0" aria-valuemax="30000" aria-valuenow="0" aria-valuetext="$0 из $30000">
+          <div class="progress__fill" id="progress-fill"></div>
+        </div>
+        <p class="meta tnum" id="hero-meta">0% · 0 донатов · обновлено 27.10, 05:00</p>
+        <div class="cta-row reveal" style="--i:3">
+          <a class="btn" href="#donate" data-i18n="cta_donate">Задонатить</a>
+        </div>
+      </div>
+
+      <!-- E5 · GPU, art-bleed за правый край на десктопе -->
+      <figure class="hero__art reveal" style="--i:1; margin:0;">
+        <svg class="gpu" viewBox="0 0 560 360" role="img" data-i18n-aria="gpu_aria" aria-label="Иллюстрация видеокарты NVIDIA H100: два вентилятора, кристалл H100 и память HBM3">
+          <rect class="pcb" x="20" y="28" width="520" height="280" rx="24"/>
+          <path class="line line--thin" d="M60 40 H500"/>
+          <path class="line" d="M330 34 h60 v14 h-60 z"/>
+          <text class="label" x="360" y="24" text-anchor="middle">12VHPWR</text>
+          <path class="line line--thin" d="M70 64 V150 M90 64 V150 M110 64 V150 M130 64 V150 M150 64 V150 M170 64 V150 M190 64 V150 M210 64 V150 M230 64 V150 M250 64 V150 M270 64 V150 M290 64 V150 M310 64 V150 M330 64 V150 M350 64 V150 M370 64 V150 M390 64 V150 M410 64 V150 M430 64 V150 M450 64 V150 M470 64 V150 M490 64 V150"/>
+          <g class="fan--pear" transform="translate(150 210)">
+            <circle class="line" r="62"/><circle class="line" r="16"/>
+            <path class="line line--thin" d="M0 -58 V -20 M0 20 V 58 M-58 0 H -20 M20 0 H 58"/>
+            <g transform="rotate(45)"><path class="line line--thin" d="M0 -58 V -20 M0 20 V 58 M-58 0 H -20 M20 0 H 58"/></g>
+          </g>
+          <g class="fan--cyan" transform="translate(410 210)">
+            <circle class="line" r="62"/><circle class="line" r="16"/>
+            <path class="line line--thin" d="M0 -58 V -20 M0 20 V 58 M-58 0 H -20 M20 0 H 58"/>
+            <g transform="rotate(45)"><path class="line line--thin" d="M0 -58 V -20 M0 20 V 58 M-58 0 H -20 M20 0 H 58"/></g>
+          </g>
+          <rect class="chip" x="221" y="185" width="14" height="50"/>
+          <rect class="chip" x="239" y="185" width="14" height="50"/>
+          <rect class="chip" x="257" y="185" width="46" height="50"/>
+          <rect class="chip" x="307" y="185" width="14" height="50"/>
+          <rect class="chip" x="325" y="185" width="14" height="50"/>
+          <text class="label label--accent" x="280" y="214" text-anchor="middle">H100</text>
+          <text class="label" x="280" y="178" text-anchor="middle">HBM3</text>
+          <path class="trace" d="M120 100 H 200 V 185"/>
+          <path class="trace trace--2" d="M440 100 H 360 V 185"/>
+          <path class="trace trace--3" d="M280 306 V 235"/>
+          <circle class="via" cx="120" cy="100" r="3.5"/>
+          <circle class="via" cx="440" cy="100" r="3.5"/>
+          <circle class="via" cx="280" cy="306" r="3.5"/>
+          <path class="chip" d="M210 308 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z m12 0 h8 v16 h-8 z"/>
+          <path class="line" d="M540 96 h10 M540 116 h10 M540 136 h10 M540 156 h10"/>
+          <text class="label" x="505" y="300" text-anchor="end">80 ГБ · dual-slot</text>
+        </svg>
+      </figure>
+    </section>
+
+    <!-- Способы: две карточки, у каждой свой акцент -->
+    <section id="donate" class="donate" aria-label="Способы поддержать">
+      <div class="card card--pear reveal" style="--i:0">
+        <span class="card__label" data-i18n="card_kz_label">Казахстан</span>
+        <h2 class="card__title" data-i18n="card_kz_title">Kaspi QR</h2>
+        <figure class="qr">
+          <img src="assets/qr-kaspi.svg" alt="QR-код Kaspi для перевода" width="240" height="240" loading="lazy">
+          <figcaption data-i18n="qr_caption">Kaspi → Перевести → Сканировать QR</figcaption>
+        </figure>
+      </div>
+
+      <div class="card card--cyan reveal" style="--i:1">
+        <span class="card__label" data-i18n="card_world_label">Весь мир</span>
+        <h2 class="card__title" data-i18n="card_world_title">Через PayPal</h2>
+        <p data-i18n="card_world_note">Из любой страны, с баланса PayPal или картой. Кнопка открывает платёж — сумма падает напрямую мне.</p>
+        <div class="cta-row">
+          <!-- REPLACE_ME → твоя ссылка paypal.me/имя (README §1) -->
+          <a class="btn btn--cyan" id="world-donate" href="REPLACE_ME" rel="noopener" data-i18n="card_world_cta">PayPal.me<span class="btn__arrow">→</span></a>
+        </div>
+        <p class="note" data-i18n="card_world_fee">PayPal забирает ~3–5%, вывод на карту — ещё 2–3%. Остальное идёт в сбор.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ft2 · одна строка -->
+  <footer class="foot">
+    <div class="shell">
+      <p>
+        h100 · <a href="https://github.com/adryd325/oneko.js" rel="noopener">oneko.js</a> © adryd ·
+        <span data-i18n="foot_confetti">конфетти</span> canvas-confetti © Kiril Vatev · © 2026
+      </p>
+    </div>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <!-- oneko.js: спрайт обязан быть абсолютным URL при CDN-подключении (issue #42) -->
+  <script src="https://cdn.jsdelivr.net/gh/adryd325/oneko.js@main/oneko.js"
+          data-cat="https://cdn.jsdelivr.net/gh/adryd325/oneko.js@main/oneko.gif"
+          defer></script>
+</body>
+</html>

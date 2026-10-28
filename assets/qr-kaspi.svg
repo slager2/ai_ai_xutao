@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Плейсхолдер QR-кода Kaspi">
+  <!-- ЗАМЕНИ ЭТОТ ФАЙЛ: скриншот своего QR из приложения Kaspi (Kaspi Gold → QR)
+       или сгенерируй QR по ссылке перевода. См. README §1. -->
+  <rect x="4" y="4" width="232" height="232" fill="none" stroke="#d9c98f" stroke-width="2" stroke-dasharray="8 6"/>
+  <path d="M4 40 V4 H40 M200 4 H236 V40 M236 200 V236 H200 M40 236 H4 V200" fill="none" stroke="#c9b85e" stroke-width="3"/>
+  <text x="120" y="112" text-anchor="middle" font-family="monospace" font-size="34" font-weight="700" fill="#F2C744">QR</text>
+  <text x="120" y="140" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b8770">твой Kaspi QR</text>
+  <text x="120" y="156" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b8770">assets/qr-kaspi.svg</text>
+</svg>
